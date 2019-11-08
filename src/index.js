@@ -34,6 +34,14 @@ import axios from 'axios';
 //End GET SAGA
 
 //POST SAGA
+function* postFaveSaga(action) {
+  try {
+    yield axios.post('/api/favorite', action.payload);
+    yield put({ type: 'SET_FAVE' })
+  } catch (error) {
+    console.log('error fetching Favorites', error);
+  }
+}
 
 //END POST SAGA
 
@@ -52,6 +60,7 @@ function* rootSaga() {
 
   //end rootsaga2
   // rootsaga3
+  yield takeEvery('POST_FAVE', postFaveSaga);
   // end rootsaga3
   }
 
