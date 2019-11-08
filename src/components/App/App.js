@@ -10,6 +10,8 @@ class App extends Component {
       <>
       <div>
         <h1>Giphy Search!</h1>
+
+        <Search />
       </div>
       <Router>
       <div className="navBar">
