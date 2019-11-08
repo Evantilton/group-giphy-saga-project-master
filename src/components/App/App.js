@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
+
+import Search from '../Search/Search'
+
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Favorite from '../Favorite/Favorite';
 import Search from '../Search/Search';
+
 
 class App extends Component {
 
@@ -10,6 +14,7 @@ class App extends Component {
       <>
       <div>
         <h1>Giphy Search!</h1>
+
 
         <Search />
       </div>
@@ -23,6 +28,7 @@ class App extends Component {
             </Route>
         <Link to="/">Search</Link>
         <Link to="/favorite">Favorites</Link>
+
       </div>
       </Router>
       </>
