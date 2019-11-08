@@ -36,18 +36,18 @@ doSearch = event => {
     })
 }
 
-    addFavorite = (event) =>{
-        //adds favorited search result to database
-        event.preventDefault();
-        console.log('Favorite clicked');
-        this.props.dispatch({ type: 'POST_FAVES', payload: this.state.image })
-        this.setState({
-            newFave: {
-                category_id: '',
-                image: '',
-            }
-        });
-    }
+    // addFavorite = (event) =>{
+    //     //adds favorited search result to database
+    //     event.preventDefault();
+    //     console.log('Favorite clicked');
+    //     this.props.dispatch({ type: 'POST_FAVES', payload: this.state.image })
+    //     this.setState({
+    //         newFave: {
+    //             category_id: '',
+    //             image: '',
+    //         }
+    //     });
+    // }
       
 
   render() {
