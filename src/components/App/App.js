@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Favorite from '../Favorite/Favorite';
 import Search from '../Search/Search';
@@ -11,6 +12,7 @@ class App extends Component {
       <>
       <div>
         <h1>Giphy Search!</h1>
+
 
       </div>
       <Router>

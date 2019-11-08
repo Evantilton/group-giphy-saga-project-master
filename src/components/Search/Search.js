@@ -8,27 +8,23 @@ import { connect } from 'react-redux';
 
 class Search extends Component {
   state = {
-    searchRequest: {
-      searchText: '',
-    }
+      searchText: '', 
   }
   handleNameChange = event => {
     console.log('event happened')
     this.setState({
-      searchRequest: {
-        [event.target.searchText]: event.target.value,
-      }
+        searchText: event.target.value,
     });
   }
 
 
 doSearch = event => {
   console.log("doing a search hopefully?")
-  axios.get('/api/search')
+  axios.get(`/api/search/${this.state.searchText}`)
     .then(response => {
       console.log(response.data)
       this.props.dispatch({type: 'GIPHY_SEARCH', payload: response.data.data.url})
-
+      
     })
     .catch(error => {
       alert('Could not do search at this time. Please try again later');
@@ -59,7 +55,7 @@ doSearch = event => {
 
         <form onSubmit={this.doSearch}>
           <input type='text' placeholder='search' name='url'
-            value={this.state.searchRequest.searchText} onChange={this.handleNameChange} />
+            value={this.state.searchText} onChange={this.handleNameChange} />
           <input type='submit' value='add new search request' />
           {/* <img src={this.props.searchReducer}></img> */}
         </form>
