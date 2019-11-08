@@ -16,7 +16,12 @@ import axios from 'axios';
 
 /////////////////////Reducer////////////////////////
 //reducerOne
-
+const searchReducer = (state = {}, action) => {
+    if(action.type === 'GIPHY_SEARCH') {
+        return [action.payload];
+    }
+    return state;
+}
 //end reducerOne
 
 //reducertwo
@@ -64,7 +69,7 @@ const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
   combineReducers({
     //reducer1
-
+    searchReducer,
     //end reducer1
     //reducer2
 
